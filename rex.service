@@ -1,0 +1,9 @@
+[Unit]
+Description=ReX network and server self-healing service.
+
+[Service]
+type=simple
+ExecStart=/opt/ReX/manage.py runserver
+
+[Install]
+WantedBy=multi-user.target
