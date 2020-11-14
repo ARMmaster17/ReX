@@ -19,4 +19,4 @@ def trigger(request):
     for vm in proxmox.cluster.resources.get(type='vm'):
         if vm['name'] == hostname:
             return JsonResponse(proxmox.nodes(vm['node']).lxc(vm['vmid']).status.reboot.post(), safe=False)
-    return JsonResponse("An error occured", safe=False)
+    return JsonResponse("An error occurred", safe=False)
