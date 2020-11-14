@@ -1,0 +1,5 @@
+---
+proxmox_host: "hostname:8006"
+proxmox_user: username@realm
+proxmox_password: password
+proxmox_verify_ssl: false
