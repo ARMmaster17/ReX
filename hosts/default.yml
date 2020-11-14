@@ -1,0 +1,3 @@
+---
+- fix: proxmox.reboot
+  check: none
