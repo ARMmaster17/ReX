@@ -3,3 +3,4 @@ djangorestframework
 requests
 proxmoxer
 pyyaml
+pythonping

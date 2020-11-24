@@ -1,6 +1,7 @@
 import yaml
 import os
 from api.proxmox import proxmox_reboot
+from pythonping import ping
 
 
 def load_actions(hostname):
@@ -24,6 +25,15 @@ def perform_actions(hostname):
         if action['check'] == 'none':
             # User doesn't want to check. Move on to next item (if it exists).
             continue
+        elif action['check'] == 'ping':
+            # Ping the hostname and check if it is up.
+            result = ping(hostname)
+            if result.packet_loss == 0:
+                # Host is back up. Exit action list.
+                return
+            else:
+                # Host is not up, or the connection is faulty. Move on to next item.
+                continue
         else:
             # No checks were requested. Move on to next item (if it exists).
             continue
