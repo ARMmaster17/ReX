@@ -11,6 +11,7 @@ cd /opt
 git clone https://github.com/ARMmaster17/ReX.git
 cd ./ReX
 pip install -r requirements.txt
+export REX_SECRET_KEY changeme
 cp ./rex.service /etc/systemd/system/rex.service
 sudo systemctl daemon-reload
 sudo systemctl enable rex
@@ -27,8 +28,6 @@ sudo systemctl start rex
 // TODO: Zabbix script
 
 ## Features in progress
-- Checks if rescue operations worked.
-- YAML configurable sequence of operations.
 - AIO bash script to install.
 - Support for hypervisors other than Proxmox.
 - Network topology mapping for tracing source of network outages.
